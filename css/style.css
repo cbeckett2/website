@@ -141,3 +141,15 @@ footer a:hover {
 @media(max-width:600px){
   .hero-text{text-align:center;}
 }
+
+/* ---- desktop refinements for the hero ---- */
+@media (min-width: 900px) {
+  .hero {
+    gap: 1.5rem;          /* pull photo + text closer (was 2.5) */
+    margin-top: 2rem;     /* slightly less empty space above */
+  }
+  .hero-img {
+    width: 280px;         /* up from 220px */
+    height: 280px;
+  }
+}
