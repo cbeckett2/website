@@ -169,3 +169,22 @@ footer a:hover {
   .hero-text{text-align:left;}/* keep text flush left */
 }
 
+/* ===== desktop hero perfectly centred ===== */
+@media (min-width: 900px){
+  .hero{
+    max-width: 1100px;     /* keeps pair from drifting too wide */
+    margin: 0 auto;        /* centres block in page */
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;           /* space between photo & text */
+    min-height: 70vh;      /* vertical centring in viewport */
+  }
+  .hero-img{
+    width: 320px;
+    height: 320px;
+  }
+  .hero-text{
+    max-width: 480px;      /* keeps paragraph column tidy */
+    text-align: left;
+  }
+}
