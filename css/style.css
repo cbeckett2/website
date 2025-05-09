@@ -153,3 +153,19 @@ footer a:hover {
     height: 280px;
   }
 }
+
+/* ---- desktop hero: larger photo, tight side-by-side, centred ---- */
+@media (min-width: 900px){
+  .hero{
+    justify-content:center;   /* centre the whole block */
+    align-items:center;       /* vertical alignment */
+    gap:2rem;                 /* small space between photo & text */
+    min-height:70vh;          /* keeps it in mid-screen */
+  }
+  .hero-img{
+    width:300px;              /* bigger portrait */
+    height:300px;
+  }
+  .hero-text{text-align:left;}/* keep text flush left */
+}
+
