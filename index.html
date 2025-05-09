@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <!-- Ensure responsive design on mobile devices :contentReference[oaicite:4]{index=4} -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
-  <!-- Link to Futura Std font via CDN (Futura Std Book) :contentReference[oaicite:5]{index=5} -->
-  <link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet">
-  <!-- Link to your CSS stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professor Name - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Optionally include Font Awesome for icons (ORCID/LinkedIn) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
 </head>
 <body>
-  <!-- Navigation menu (appears on all pages) -->
+
+  <!-- Navigation Bar -->
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="publications.html">Publications</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="CV.pdf" target="_blank">CV</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="misc.html">MISC.</a></li>
+      <li><a href="misc.html">MISC</a></li>
     </ul>
   </nav>
 
-  <main>
-    <h1>Your Name</h1>               <!-- Replace with your name -->
-    <h2>Academic Researcher <em>(currently between institutions)</em></h2>
-    <!-- Optionally, add a brief intro here -->
-  </main>
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Home page content: Name and Photo -->
+    <h1>Dr. Cameron G. Beckett</h1>
+    <img src="images/portrait.jpg" alt="Photo of Cameron Beckett" width="250" />
+    <p>Hello! I am a recent PhD graduate from the University of Bologna. 
+       Welcome to my personal academic website. Here you can find information about 
+       my research, publications, and how to contact me. Feel free to explore the 
+       different sections using the navigation menu above.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- ORCID and LinkedIn icons/links -->
+    <a href="https://orcid.org/0009-0005-8006-776X" target="_blank">
+      <!-- ORCID icon using FontAwesome -->
+      <i class="fa-brands fa-orcid" aria-hidden="true"></i> ORCID
+    </a>
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/cameron-beckett-4265bb141/" target="_blank">
+      <!-- LinkedIn icon using FontAwesome -->
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+    </a>
+  </footer>
+
 </body>
 </html>
