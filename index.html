@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cameron G. Beckett – Home</title>
-
-  <link rel="stylesheet" href="/css/style.css">
-  <!-- Font Awesome for ORCID / LinkedIn icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cameron G. Beckett - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Optionally include Font Awesome for icons (ORCID/LinkedIn) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
 </head>
 <body>
 
-<!-- mobile menu button -->
-<button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-
-<nav id="site-nav">
+  <!-- Navigation Bar -->
+<nav>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/research/">Research</a></li>
@@ -25,38 +21,39 @@
   </ul>
 </nav>
 
+
 <!-- Hero section -->
 <section class="hero">
-  <img src="/images/portrait.jpg" alt="Photo of Cameron Beckett" class="hero-img">
+  <img src="images/portrait.jpg" alt="Photo of Cameron Beckett" class="hero-img">
   <div class="hero-text">
-    <h1>Dr. Cameron G. Beckett</h1>
-    <p class="tagline">Medical Sociologist · Dementia-Care Research</p>
+      <h1>Dr. Cameron G. Beckett</h1>
+      <p class="tagline">Medical Sociologist · Dementia Care Research</p>
 
-    <p class="about">
-      I study how informal caregivers support people living with Alzheimer’s and related
-      dementias. My work combines qualitative inquiry with mixed-methods analysis to
-      understand caregiver stress, cultural expectations, and paths to better policy.
-    </p>
+      <!-- Your intro paragraph – edit freely -->
+      <p class="about">
+        I study how informal caregivers support people living with Alzheimer’s and related
+        dementias. My work combines qualitative inquiry with mixed-methods analysis to
+        understand caregiver stress, cultural expectations, and paths to better policy.
+      </p>
 
-    <a href="/beckett-cv.pdf" class="btn" target="_blank">Download CV ↗</a>
+      <!-- Optional “Download CV” button -->
+      <a href="beckett-cv.pdf" class="btn" target="_blank">Download CV &nbsp;↗</a>
   </div>
 </section>
 
-<footer>
-  <a href="https://orcid.org/0009-0005-8006-776X" target="_blank">
-    <i class="fa-brands fa-orcid" aria-hidden="true"></i> ORCID
-  </a>
-  <span>|</span>
-  <a href="https://www.linkedin.com/in/cameron-beckett-4265bb141/" target="_blank">
-    <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
-  </a>
-</footer>
-
-<!-- tiny JS to toggle the slide-in menu -->
-<script>
-document.getElementById('menu-toggle').addEventListener('click', () =>
-  document.getElementById('site-nav').classList.toggle('open'));
-</script>
+  <!-- Footer -->
+  <footer>
+    <!-- ORCID and LinkedIn icons/links -->
+    <a href="https://orcid.org/0009-0005-8006-776X" target="_blank">
+      <!-- ORCID icon using FontAwesome -->
+      <i class="fa-brands fa-orcid" aria-hidden="true"></i> ORCID
+    </a>
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/cameron-beckett-4265bb141/" target="_blank">
+      <!-- LinkedIn icon using FontAwesome -->
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+    </a>
+  </footer>
 
 </body>
 </html>
