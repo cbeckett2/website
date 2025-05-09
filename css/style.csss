@@ -1,8 +1,8 @@
 /* === Font Embedding === */
 @font-face {
   font-family: 'FuturaStdBook';
-  src: url('../fonts/FuturaStdBook.woff2') format('woff2'),
-       url('../fonts/FuturaStdBook.woff') format('woff');
+  src: url('fonts/FuturaStdBook.woff2') format('woff2'),
+       url('fonts/FuturaStdBook.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
