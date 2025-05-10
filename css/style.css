@@ -250,4 +250,15 @@ footer a:hover {
   font-size: 0.9em;                          /* slightly smaller than text */
 }
 
+
+
+/* === site-wide link colour ==================================== */
+a {
+  color:#F9B3BD;          /* soft pink used elsewhere */
+}
+
+a:hover {
+  color:#F4B183;          /* same peach accent you use for hovers */
+}
+
 /* desktop keep existing styles */
