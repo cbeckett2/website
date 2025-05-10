@@ -13,13 +13,13 @@
 body {
   margin: 0;
   background-color: #0E4D38;  /* page background */
-  color: #F9B3BD;             /* primary text color */
+  color: #FFFFFF;             /* primary text color */
   font-family: 'FuturaStdBook', sans-serif;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
-  color: #F9B3BD; /* headings in primary text color (could also use accent for h1 if desired) */
+  color: #FFFFFF; /* headings in primary text color (could also use accent for h1 if desired) */
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -49,7 +49,7 @@ nav li {
   margin: 0 1em;            /* spacing between menu items */
 }
 nav a {
-  color: #F9B3BD;           /* nav link text color */
+  color: #FFFFFF;           /* nav link text color */
   text-decoration: none;    /* no underline in nav by default */
   font-weight: bold;
   padding: 0.25em 0.5em;    /* small padding around link for click/tap area */
@@ -82,11 +82,11 @@ footer {
   text-align: center;
   padding: 1em 0;
   background-color: #0E4D38;
-  color: #F9B3BD;
+  color: #FFFFFF;
   font-size: 0.9em;
 }
 footer a {
-  color: #F9B3BD;
+  color: #FFFFFF;
   text-decoration: none;
   margin: 0 0.5em;
 }
@@ -133,7 +133,7 @@ footer a:hover {
   text-decoration:none;
 }
 .btn:hover{
-  background:#F9B3BD;
+  background:#FFFFFF;
   color:#0E4D38;
 }
 
@@ -197,7 +197,7 @@ footer a:hover {
   font-size:2rem;                /* big icon */
   background:none;
   border:none;
-  color:#F9B3BD;
+  color:#FFFFFF;
   cursor:pointer;
   z-index:1000;
 }
