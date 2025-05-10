@@ -220,6 +220,26 @@ footer a:hover {
   }
 }
 
+/* ==== Home-page comfort tweaks for small screens (≤ 600 px) ===== */
+@media (max-width: 600px){
+  /* 1 ▸ side breathing-room for the hero text block */
+  .hero{
+    padding: 0 1.25rem;          /* 20 px left & right background margin */
+  }
+  .hero-text{
+    padding: 0 0.25rem;          /* internal micro-padding so text never hugs portrait */
+  }
 
+  /* 2 ▸ pull portrait & name closer together */
+  .hero{
+    gap: 1.2rem;                 /* was 2.5 → much tighter vertical spacing */
+  }
+
+  /* 3 ▸ slightly bigger portrait */
+  .hero-img{
+    width: 260px;                /* from 220 → 260 */
+    height: 260px;
+  }
+}
 
 /* desktop keep existing styles */
