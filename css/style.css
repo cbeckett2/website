@@ -205,5 +205,21 @@ footer a:hover {
   }
 }
 
+/* ===== Mobile readability tweaks (≤ 600 px) ===================== */
+@media (max-width: 600px){
+  /* 1 · Add side breathing-room */
+  .main-content{
+    padding-left: 1.5rem;   /* was 1.5em ≈ 24 px → now 24 px solid */
+    padding-right: 1.5rem;  /* adjust to taste (2rem = ~32 px)     */
+  }
+
+  /* 2 · Slightly larger portrait */
+  .hero-img{
+    width: 260px;           /* up from 220 */
+    height: 260px;
+  }
+}
+
+
 
 /* desktop keep existing styles */
