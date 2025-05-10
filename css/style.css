@@ -242,4 +242,12 @@ footer a:hover {
   }
 }
 
+/* ==== Arrow fix ===== */
+/* arrow after “Download CV” */
+.arrow{
+  font-family: 'FuturaStdBook', sans-serif;  /* avoid emoji font */
+  color: #F4B183;                            /* same accent green you like */
+  font-size: 0.9em;                          /* slightly smaller than text */
+}
+
 /* desktop keep existing styles */
