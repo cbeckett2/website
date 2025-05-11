@@ -12,8 +12,8 @@
 /* === Base Styles === */
 body {
   margin: 0;
-  background-color: #0E4D38;  /* page background */
-  color: #FFFFFF;             /* primary text color */
+  background-color: #FFFFFF;  /* page background */
+  color: #000000;             /* primary text color */
   font-family: 'FuturaStdBook', sans-serif;
   line-height: 1.6;
 }
