@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: #FFFFFF; /* headings in primary text color (could also use accent for h1 if desired) */
+  color: #F4B183; /* headings in primary text color (could also use accent for h1 if desired) */
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
