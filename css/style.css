@@ -192,7 +192,7 @@ footer a:hover {
 
 
 /* ============== NAV always fits the screen ==================== */
-/* phones ≤ 420 px – keep links on one line by squeezing spacing */
+/* phones â‰¤ 420 px â€“ keep links on one line by squeezing spacing */
 @media (max-width: 420px){
   nav ul{
     flex-wrap: nowrap;        /* never break to a new line   */
@@ -205,24 +205,24 @@ footer a:hover {
   }
 }
 
-/* ===== Mobile readability tweaks (≤ 600 px) ===================== */
+/* ===== Mobile readability tweaks (â‰¤ 600 px) ===================== */
 @media (max-width: 600px){
-  /* 1 · Add side breathing-room */
+  /* 1 Â· Add side breathing-room */
   .main-content{
-    padding-left: 1.5rem;   /* was 1.5em ≈ 24 px → now 24 px solid */
+    padding-left: 1.5rem;   /* was 1.5em â‰ˆ 24 px â†’ now 24 px solid */
     padding-right: 1.5rem;  /* adjust to taste (2rem = ~32 px)     */
   }
 
-  /* 2 · Slightly larger portrait */
+  /* 2 Â· Slightly larger portrait */
   .hero-img{
     width: 260px;           /* up from 220 */
     height: 260px;
   }
 }
 
-/* ==== Home-page comfort tweaks for small screens (≤ 600 px) ===== */
+/* ==== Home-page comfort tweaks for small screens (â‰¤ 600 px) ===== */
 @media (max-width: 600px){
-  /* 1 ▸ side breathing-room for the hero text block */
+  /* 1 â–¸ side breathing-room for the hero text block */
   .hero{
     padding: 0 1.25rem;          /* 20 px left & right background margin */
   }
@@ -230,20 +230,20 @@ footer a:hover {
     padding: 0 0.25rem;          /* internal micro-padding so text never hugs portrait */
   }
 
-  /* 2 ▸ pull portrait & name closer together */
+  /* 2 â–¸ pull portrait & name closer together */
   .hero{
-    gap: 1.2rem;                 /* was 2.5 → much tighter vertical spacing */
+    gap: 1.2rem;                 /* was 2.5 â†’ much tighter vertical spacing */
   }
 
-  /* 3 ▸ slightly bigger portrait */
+  /* 3 â–¸ slightly bigger portrait */
   .hero-img{
-    width: 260px;                /* from 220 → 260 */
+    width: 260px;                /* from 220 â†’ 260 */
     height: 260px;
   }
 }
 
 /* ==== Arrow fix ===== */
-/* arrow after “Download CV” */
+/* arrow after â€œDownload CVâ€ */
 .arrow{
   font-family: 'FuturaStdBook', sans-serif;  /* avoid emoji font */
   color: #0E4D38;                            /* same accent green you like */
@@ -262,3 +262,16 @@ a:hover {
 }
 
 /* desktop keep existing styles */
+
+/* Keep the CV button centered beneath the portrait */
+.hero-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.hero-portrait .hero-img {
+  margin: 0;
+}
