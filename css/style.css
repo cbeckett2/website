@@ -28,7 +28,7 @@ h2 { font-size: 1.5em; }
 
 /* Limit content width for readability on large screens */
 .main-content {
-  max-width: 800px;    /* limit line width ~ roughly 60-75 chars per line :contentReference[oaicite:20]{index=20} */
+  max-width: 800px;    /* limit line width ~ roughly 60-75 chars per line */
   margin: 0 auto;      /* center it */
   padding: 1em 1.5em;  /* some padding for spacing (1em top/bottom, 1.5em sides) */
 }
@@ -63,7 +63,7 @@ nav a:hover {
 }
 /* We choose a background highlight on hover for visibility. If you prefer an underline instead:
    nav a:hover { background: none; color: #F4B183; text-decoration: underline; }
-   (Ensuring contrast: accent color on dark bg is readable:contentReference[oaicite:21]{index=21}.) */
+   (Ensuring contrast: accent color on dark bg is readable.) */
 
 /* If the user wants an "active" page highlight, we can add a class "active" on the current page link:
 nav a.active { text-decoration: underline; background-color: #F4B183; color: #0E4D38; }
@@ -72,7 +72,7 @@ nav a.active { text-decoration: underline; background-color: #F4B183; color: #0E
 /* === Responsive Image === */
 img {
   max-width: 100%;
-  height: auto;   /* make images scale down with screen :contentReference[oaicite:22]{index=22} */
+  height: auto;   /* make images scale down with screen */
   display: block;
   margin: 1em auto; /* center images by default (auto margins) and add vertical spacing */
 }
@@ -137,92 +137,42 @@ footer a:hover {
   color:#0E4D38;
 }
 
-/* mobile tweak: center text under photo */
-@media(max-width:600px){
-  .hero-text{text-align:center;}
-}
-
-/* ---- desktop refinements for the hero ---- */
-@media (min-width: 900px) {
-  .hero {
-    gap: 1.5rem;          /* pull photo + text closer (was 2.5) */
-    margin-top: 2rem;     /* slightly less empty space above */
-  }
-  .hero-img {
-    width: 280px;         /* up from 220px */
-    height: 280px;
-  }
-}
-
-/* ---- desktop hero: larger photo, tight side-by-side, centred ---- */
-@media (min-width: 900px){
-  .hero{
-    justify-content:center;   /* centre the whole block */
-    align-items:center;       /* vertical alignment */
-    gap:2rem;                 /* small space between photo & text */
-    min-height:70vh;          /* keeps it in mid-screen */
-  }
-  .hero-img{
-    width:300px;              /* bigger portrait */
-    height:300px;
-  }
-  .hero-text{text-align:left;}/* keep text flush left */
-}
-
-/* ===== desktop hero perfectly centred ===== */
-@media (min-width: 900px){
-  .hero{
-    max-width: 1100px;     /* keeps pair from drifting too wide */
-    margin: 0 auto;        /* centres block in page */
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;           /* space between photo & text */
-    min-height: 70vh;      /* vertical centring in viewport */
-  }
-  .hero-img{
-    width: 320px;
-    height: 320px;
-  }
-  .hero-text{
-    max-width: 480px;      /* keeps paragraph column tidy */
-    text-align: left;
-  }
-}
-
-
 
 /* ============== NAV always fits the screen ==================== */
-/* phones â‰¤ 420 px â€“ keep links on one line by squeezing spacing */
-@media (max-width: 420px){
-  nav ul{
-    flex-wrap: nowrap;        /* never break to a new line   */
-    justify-content: center;  /* stay centred                */
-  }
-  nav li{ margin: 0 0.4rem; } /* tighter side-margins        */
-  nav a{
-    font-size: 0.95rem;       /* slightly smaller text       */
-    padding: 0.2rem 0.35rem;  /* slimmer buttons             */
-  }
+/* Size and spacing scale with the window between a 390-pixel phone and
+   540 pixels, where the full-size menu first fits. Nothing hangs on a
+   single breakpoint, so no width in between gets a menu wider than the
+   window (which would make the whole page scroll sideways). */
+nav ul { flex-wrap: nowrap; justify-content: center; }
+nav li { margin: 0 clamp(0.4rem, calc(7.733vw - 1.485rem), 1.125rem); }
+nav a {
+  font-size: clamp(0.95rem, 3.897vw, 1.125rem);
+  padding: clamp(0.2rem, calc(0.865vw - 0.011rem), 0.28125rem)
+           clamp(0.35rem, calc(2.266vw - 0.2025rem), 0.5625rem);
+}
+@media (max-width: 350px) {   /* the narrowest phones */
+  nav li { margin: 0 0.2rem; }
+  nav a  { font-size: 0.82rem; padding: 0.2rem 0.25rem; }
 }
 
-/* ===== Mobile readability tweaks (â‰¤ 600 px) ===================== */
+/* ===== Mobile readability tweaks (≤ 600 px) ===================== */
 @media (max-width: 600px){
-  /* 1 Â· Add side breathing-room */
+  /* 1 · Add side breathing-room */
   .main-content{
-    padding-left: 1.5rem;   /* was 1.5em â‰ˆ 24 px â†’ now 24 px solid */
+    padding-left: 1.5rem;   /* was 1.5em ≈ 24 px → now 24 px solid */
     padding-right: 1.5rem;  /* adjust to taste (2rem = ~32 px)     */
   }
 
-  /* 2 Â· Slightly larger portrait */
+  /* 2 · Slightly larger portrait */
   .hero-img{
     width: 260px;           /* up from 220 */
     height: 260px;
   }
 }
 
-/* ==== Home-page comfort tweaks for small screens (â‰¤ 600 px) ===== */
+/* ==== Home-page comfort tweaks for small screens (≤ 600 px) ===== */
 @media (max-width: 600px){
-  /* 1 â–¸ side breathing-room for the hero text block */
+  /* 1 ▸ side breathing-room for the hero text block */
   .hero{
     padding: 0 1.25rem;          /* 20 px left & right background margin */
   }
@@ -230,25 +180,18 @@ footer a:hover {
     padding: 0 0.25rem;          /* internal micro-padding so text never hugs portrait */
   }
 
-  /* 2 â–¸ pull portrait & name closer together */
+  /* 2 ▸ pull portrait & name closer together */
   .hero{
-    gap: 1.2rem;                 /* was 2.5 â†’ much tighter vertical spacing */
+    gap: 1.2rem;                 /* was 2.5 → much tighter vertical spacing */
   }
 
-  /* 3 â–¸ slightly bigger portrait */
+  /* 3 ▸ slightly bigger portrait */
   .hero-img{
-    width: 260px;                /* from 220 â†’ 260 */
+    width: 260px;                /* from 220 → 260 */
     height: 260px;
   }
 }
 
-/* ==== Arrow fix ===== */
-/* arrow after â€œDownload CVâ€ */
-.arrow{
-  font-family: 'FuturaStdBook', sans-serif;  /* avoid emoji font */
-  color: #0E4D38;                            /* same accent green you like */
-  font-size: 0.9em;                          /* slightly smaller than text */
-}
 
 
 
@@ -323,9 +266,24 @@ nav a[aria-current="page"] {
 
 /* ---- reading pages (Research, Contact, MISC) ---- */
 .main-content {
-  max-width: 41rem;             /* about 70 characters of Futura Book at 18px */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 40rem;             /* a 37rem column: about 66 characters of Futura Book at 18px */
   padding: 1.5rem 1.5rem 4rem;
 }
+
+/* Page frame: on a short page the footer sits at the foot of the window. */
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+footer { margin-top: auto; }
+
+/* Lists hang their bullets in the margin, so the text keeps the column's left edge. */
+.main-content ul:not(.records) { padding-left: 0; margin: 0 0 1.15rem; }
+.main-content ul:not(.records) li + li { margin-top: 0.5rem; }
 
 /* Level 1: the page. Largest size, tight leading. */
 .main-content h1 {
@@ -399,6 +357,8 @@ nav a[aria-current="page"] {
   border-top: 1px solid var(--rule);
 }
 .records li:first-child { border-top: 0; padding-top: 0; }
+.records li > * { min-width: 0; }
+.records a { overflow-wrap: anywhere; }   /* a long identifier may break rather than widen the page on the narrowest phones */
 .records .when  { color: var(--peach); }
 .records .title { color: var(--white); }
 
@@ -407,4 +367,104 @@ nav a[aria-current="page"] {
   .main-content h3 { font-size: 1.5rem; }
   .main-content .lead { font-size: 1.25rem; }
   .records li { grid-template-columns: 1fr; row-gap: 0.1rem; }
+}
+
+/* ================================================================
+   HOME PAGE
+   A title page in two arrangements of the same parts. Narrow windows:
+   one centred axis (portrait, link, name, text). Wide windows: two
+   columns hung from a shared top line, set as one block and placed
+   at the optical centre of the window. Sizes and spacing inside the
+   parts are identical in both.
+   ================================================================ */
+
+/* ---- the parts, shared by both arrangements ---- */
+
+/* The arrow is drawn rather than typed: a typed arrow turns into a
+   coloured emoji on phones. Its stroke matches the stem of the type. */
+.btn .arrow {
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 0.14em;
+  vertical-align: 0.03em;
+  overflow: visible;
+}
+
+/* Proximity: the link belongs to the portrait. */
+.hero-portrait { gap: 1.75rem; }
+
+/* The name is set exactly like every other page title. */
+.hero-text h1 {
+  font-size: var(--step-3);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.55rem;
+  text-wrap: balance;
+}
+.hero-text .tagline { margin: 0 0 1.6rem; }
+.hero-text .tagline span { white-space: nowrap; }
+@media (max-width: 440px) {
+  /* too narrow for one line: the two phrases stack and the dot between them is dropped, so no word is left alone */
+  .hero-text .tagline span { display: block; }
+  .hero-text .tagline .sep { display: none; }
+}
+.hero-text .about { margin: 0 0 1.15rem; text-wrap: pretty; }   /* same paragraph rhythm as the reading pages */
+.hero-text .about:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  /* same step down as the other page titles; the second value keeps the name on one line on the narrowest phones */
+  .hero-text h1 { font-size: min(2.25rem, 9.4vw); }
+}
+
+/* ---- narrow: stacked on one axis ---- */
+@media (max-width: 759px) {
+  .hero {
+    gap: 3.1rem;            /* the name opens a new group: nearly twice the space that sits inside the portrait group */
+    margin-bottom: 3rem;
+  }
+  .hero-img { width: 260px; height: 260px; }
+  .hero-text { text-align: center; }
+}
+
+/* ---- wide: two columns ---- */
+@media (min-width: 760px) {
+  body.home {
+    display: grid;
+    grid-template-rows: auto 1fr auto;  /* navigation, page, footer */
+  }
+
+  .hero {
+    display: grid;
+    /* portrait : text is roughly 4 : 9; the text column holds about 62 characters */
+    grid-template-columns: clamp(12.5rem, 19vw, 15rem) minmax(0, 34rem);
+    /* spare height is shared 2 : 3 above and below the block */
+    grid-template-rows: minmax(3.5rem, 2fr) auto minmax(4rem, 3fr);
+    column-gap: clamp(2.5rem, 4.5vw, 4.5rem);
+    row-gap: 0;
+    justify-content: center;
+    align-items: start;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0 1.5rem;
+  }
+
+  .hero-portrait {
+    grid-area: 2 / 1;
+    margin-top: 0.06rem;  /* the circle rises just past the capitals of the name: a round form must overshoot a flat one to look level */
+    position: sticky;     /* the portrait and link stay in view while the text scrolls on a short window */
+    top: 3.5rem;
+  }
+  .hero-portrait .hero-img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .hero-text {
+    grid-area: 2 / 2;
+    max-width: none;
+    text-align: left;
+  }
 }
