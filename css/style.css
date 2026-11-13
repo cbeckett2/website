@@ -275,3 +275,136 @@ a:hover {
 .hero-portrait .hero-img {
   margin: 0;
 }
+
+/* ================================================================
+   TYPE SYSTEM
+   One family, one weight: Futura Std Book. With no second weight to
+   lean on, hierarchy is built from four things only: size, case,
+   colour, and space. Bold is never faked; journal titles may slant.
+   ================================================================ */
+:root {
+  --pine:  #0E4D38;   /* ground */
+  --white: #FFFFFF;   /* headings and emphasis */
+  --mist:  #DCE8E2;   /* running text, one step quieter than white */
+  --peach: #F4B183;   /* section heads, dates, hover */
+  --rose:  #F9B3BD;   /* links */
+  --rule:  rgba(255, 255, 255, 0.18);
+
+  /* scale: body 18px, then steps of roughly a major third */
+  --step--1: 0.9rem;
+  --step-0:  1.125rem;
+  --step-1:  1.4rem;
+  --step-2:  1.75rem;
+  --step-3:  2.75rem;
+}
+
+body {
+  font-size: var(--step-0);
+  line-height: 1.65;            /* light text on a dark ground needs open leading */
+  color: var(--mist);
+  font-synthesis: style;        /* slanted titles allowed; no synthetic bold */
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, strong, b, nav a, .btn { font-weight: normal; }
+strong, b { color: var(--white); }  /* emphasis by colour, since weight is fixed */
+
+a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 2px solid var(--peach); outline-offset: 3px; border-radius: 2px; }
+
+nav a { letter-spacing: 0.03em; }
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--peach);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5em;
+}
+
+/* ---- reading pages (Research, Contact, MISC) ---- */
+.main-content {
+  max-width: 41rem;             /* about 70 characters of Futura Book at 18px */
+  padding: 1.5rem 1.5rem 4rem;
+}
+
+/* Level 1: the page. Largest size, tight leading. */
+.main-content h1 {
+  font-size: var(--step-3);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  margin: 2rem 0 1.5rem;
+}
+
+/* Level 2: the standfirst. One paragraph that can be read alone. */
+.main-content .lead {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--white);
+  margin: 0 0 1.25rem;
+}
+
+.main-content p { margin: 0 0 1.15rem; }
+
+/* Level 3: sections. Futura capitals, letterspaced, in the accent.
+   Small on purpose: case and colour mark the break, a rule and space confirm it. */
+.main-content h2 {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--peach);
+  margin: 4.25rem 0 1.75rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* Level 4: projects. Sentence case, sized up, white. Sits close to its own text. */
+.main-content h3 {
+  font-size: var(--step-2);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 3rem 0 0.75rem;
+}
+.main-content h2 + h3 { margin-top: 0; }
+.main-content h1, .main-content h3, .main-content .lead { text-wrap: balance; }
+.main-content p { text-wrap: pretty; }
+
+/* Level 5: notes and captions. */
+.main-content .note,
+.research-figure figcaption {
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
+
+/* ---- figure ---- */
+.research-figure { margin: 2.25rem 0 2.5rem; }
+.research-figure img {
+  width: 100%;
+  margin: 0;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: clamp(0.5rem, 2.5vw, 1.25rem);
+  box-sizing: border-box;
+}
+.research-figure figcaption { margin-top: 0.85rem; }
+
+/* ---- dated records: publications, fellowships ---- */
+.records { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.records li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  column-gap: 1.5rem;
+  align-items: baseline;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--rule);
+}
+.records li:first-child { border-top: 0; padding-top: 0; }
+.records .when  { color: var(--peach); }
+.records .title { color: var(--white); }
+
+@media (max-width: 600px) {
+  .main-content h1 { font-size: 2.25rem; }
+  .main-content h3 { font-size: 1.5rem; }
+  .main-content .lead { font-size: 1.25rem; }
+  .records li { grid-template-columns: 1fr; row-gap: 0.1rem; }
+}
