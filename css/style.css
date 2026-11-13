@@ -284,9 +284,9 @@ a:hover {
    ================================================================ */
 :root {
   --pine:  #0E4D38;   /* ground */
-  --white: #FFFFFF;   /* headings and emphasis */
+  --white: #FFFFFF;   /* headings, standfirst, titles */
   --mist:  #DCE8E2;   /* running text, one step quieter than white */
-  --peach: #F4B183;   /* section heads, dates, hover */
+  --peach: #F4B183;   /* section heads, dates, key terms, hover */
   --rose:  #F9B3BD;   /* links */
   --rule:  rgba(255, 255, 255, 0.18);
 
@@ -308,7 +308,7 @@ body {
 }
 
 h1, h2, h3, h4, strong, b, nav a, .btn { font-weight: normal; }
-strong, b { color: var(--white); }  /* emphasis by colour, since weight is fixed */
+strong, b { color: var(--peach); }  /* emphasis by hue: weight is fixed, and white on mist is too small a step to read as emphasis */
 
 a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 a:focus-visible { outline: 2px solid var(--peach); outline-offset: 3px; border-radius: 2px; }
